@@ -4,10 +4,10 @@ import { ThemeProvider } from 'glamorous-native'
 
 import Root from '_demo_/Root'
 
-import { theme } from './theme'
+import { mainTheme } from 'themes/main'
 
 const Demo: StatelessComponent<any> = () => (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={mainTheme}>
         <Root />
     </ThemeProvider>
 )

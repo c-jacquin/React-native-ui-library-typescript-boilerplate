@@ -1,8 +1,10 @@
 import React from 'react'
+import { Theme } from '../src/themes/types'
 // Import types here
 
 interface MyLib {
-    // Insert components here
+    mainTheme: Theme
+    // Insert exported stuff here
 }
 
 declare var lib: MyLib

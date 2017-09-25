@@ -62,7 +62,7 @@ module.exports = {
             abortOnFail: true,
         }, {
             type: 'modify',
-            path: '../src/index.lib.ts',
+            path: '../src/index.ts',
             templateFile: './component/templates/export*From.hbs',
             pattern: /\/\/ Insert components export here/,
             abortOnFail: true,
@@ -70,7 +70,7 @@ module.exports = {
             type: 'modify',
             path: '../typings/index.d.ts',
             templateFile: './component/templates/typingComponent.hbs',
-            pattern: /\/\/ Insert components here/,
+            pattern: /\/\/ Insert exported stuff here/,
             abortOnFail: true,
         }, {
             type: 'modify',
