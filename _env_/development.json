@@ -1,9 +1,4 @@
 {
     "ENV": "dev",
-    "APP_NAME": "MyApp",
-    "STORE_KEY": "myAppStoreKey",
-    "LANGUAGE": {
-        "DEFAULT_LOCALE": "en",
-        "SUPPORTED_LOCALES": ["en", "fr"]
-    }
+    "APP_NAME": "MyApp"
 }

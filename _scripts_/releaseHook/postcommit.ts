@@ -14,9 +14,8 @@
 
         await versionDoc(pkg.version)
         await updateExpoVersion(pkg.version)
-        const { androidApkUrl } = await build()
 
-        changelog = await updateChangeLog(pkg.version, androidApkUrl, changelog, changelogPath)
+        changelog = await updateChangeLog(pkg.version, changelog, changelogPath)
 
         // await downloadApk(version, androidApkUrl)
 

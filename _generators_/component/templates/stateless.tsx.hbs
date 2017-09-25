@@ -1,18 +1,14 @@
 import React, { StatelessComponent } from 'react'
-{{#if wantMessages}}
-import { FormattedMessage } from 'react-intl'
-{{/if}}
-import { View } from 'react-native'
+import { View } from 'glamorous-native'
 
-{{#if wantMessages}}
-import messages from './messages'
-{{/if}}
-import { I{{ properCase name }}Props } from './types'
+import { {{ pascal name }}Props } from './types'
 
-const {{ properCase name }}: StatelessComponent<I{{ properCase name }}Props> = ({
+const {{ pascal name }}: StatelessComponent<{{ properCase name }}Props> = ({
 
 }) => (
     <View/>
 )
+
+{{ pascal name }}.displayName = '{{ pascal name }}'
 
 export default {{ properCase name }}

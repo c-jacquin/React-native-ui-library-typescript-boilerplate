@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "react-native-ts-boilerplate",
+    "name": "react-native-ts-lib-boilerplate",
     "description": "A react native typescript expo boilerplate",
     "slug": "react-native-ts-boilerplate",
     "privacy": "public",
@@ -9,6 +9,7 @@
     "orientation": "portrait",
     "primaryColor": "#cccccc",
     "icon": "./assets/icons/app-icon.png",
+    "entryPoint": "build/demo.jsx",
     "loading": {
       "icon": "./assets/icons/loading-icon.png",
       "hideExponentText": false

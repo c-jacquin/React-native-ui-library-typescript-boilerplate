@@ -24,27 +24,24 @@ module.exports = {
 
             return 'The name is required'
         },
-    }, {
-        type: 'confirm',
-        name: 'wantMessages',
-        default: false,
-        message: 'Do you want i18n messages (i.e. will this component use text)?',
     }],
     actions: (data) => {
-        // Generate index.js and index.test.js
         let componentTemplate
 
         switch (data.type) {
             case 'ES6 Class': {
+                data.isClass = true
                 componentTemplate = './component/templates/index.tsx.hbs'
                 break
             }
             case 'Stateless Function': {
+                data.isClass = false
                 componentTemplate = './component/templates/stateless.tsx.hbs'
                 break
             }
             default: {
-                componentTemplate = './component/templates/es6.tsx.hbs'
+                data.isClass = true
+                componentTemplate = './component/templates/index.tsx.hbs'
             }
         }
 
@@ -63,17 +60,25 @@ module.exports = {
             path: '../src/components/{{properCase name}}/types.ts',
             templateFile: './component/templates/types.ts.hbs',
             abortOnFail: true,
+        }, {
+            type: 'modify',
+            path: '../src/index.lib.ts',
+            templateFile: './component/templates/export*From.hbs',
+            pattern: /\/\/ Insert components export here/,
+            abortOnFail: true,
+        }, {
+            type: 'modify',
+            path: '../typings/index.d.ts',
+            templateFile: './component/templates/typingComponent.hbs',
+            pattern: /\/\/ Insert components here/,
+            abortOnFail: true,
+        }, {
+            type: 'modify',
+            path: '../typings/index.d.ts',
+            templateFile: './component/templates/typingImport.hbs',
+            pattern: /\/\/ Import types here/,
+            abortOnFail: true,
         }]
-
-        // If they want a i18n messages file
-        if (data.wantMessages) {
-            actions.push({
-                type: 'add',
-                path: '../src/components/{{properCase name}}/messages.ts',
-                templateFile: './component/templates/messages.ts.hbs',
-                abortOnFail: true,
-            })
-        }
 
         return actions
     },

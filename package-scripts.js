@@ -31,7 +31,7 @@ module.exports = {
     },
     docs: {
         description: 'generate documentation using typedoc (automaticly done on each release)',
-        script: 'typedoc --options _config_/typedoc.json --out docs/doc src/index.ts',
+        script: 'typedoc --options _config_/typedoc.json --out docs/doc src/index.lib.ts',
     },    
     lint: {
         description: 'lint the code with tslint',
@@ -72,19 +72,42 @@ module.exports = {
             ),
         },
         prepare: {
-            description: 'clean build dir',
+            description: 'clean dist dir',
             script: series(
-                'rimraf build -r',
-                'mkdir build'
+                'rimraf dist -r',
+                'mkdir dist'
             ),
         },
         watch: {
             description: 'build and watch for changes',
-            script: 'NODE_ENV=development tsc --watch',
+            script: 'NODE_ENV=development tsc --watch -p _config_/tsconfig-lib.json',
         },
         production: {
             description: 'build for production',
-            script: 'NODE_ENV=production tsc',
+            script: 'NODE_ENV=production tsc -p _config_/tsconfig-lib.json',
+        },
+        demo: {
+            default: {
+                description: 'build the demo app',
+                script: series(
+                    'nps build.demo.prepare',
+                    'NODE_ENV=production tsc'
+                )
+            },
+            prepare: {
+                description: 'clean the build dir',
+                script: series(
+                    'rimraf build -r',
+                    'mkdir build'
+                ),
+            },
+            watch: {
+                description: 'build the demo app and watch for sources',
+                script: series(
+                    'nps build.demo.prepare',
+                    'NODE_ENV=development tsc --watch'
+                )
+            }
         },
     },
     test: {

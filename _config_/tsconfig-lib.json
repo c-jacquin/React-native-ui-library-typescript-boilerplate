@@ -5,8 +5,8 @@
         "allowJs": true,
         "jsx": "react-native",
         "sourceMap": true,
-        "outDir": "./build",
-        "rootDir": "./src",
+        "outDir": "../dist",
+        "rootDir": "../src",
         "removeComments": false,
         "lib":["dom","es2017"],
         "strict": true,
@@ -15,18 +15,20 @@
         "noImplicitThis": true,
         "alwaysStrict": true,
         "moduleResolution": "node",
-        "baseUrl": "src",
+        "baseUrl": "../src",
         "typeRoots": [
-            "src/typings"
+            "../src/typings"
         ],
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true
     },
     "include": [
-        "src/**/*"
+        "../src/components/**/*",
+        "../src/index.ts",
+        "../src/typings"
     ],
     "exclude": [
-        "src/**/__mocks__/*",
-        "src/**/__tests__/*"
+        "../src/**/__mocks__/*",
+        "../src/**/__tests__/*"
     ]
 }
