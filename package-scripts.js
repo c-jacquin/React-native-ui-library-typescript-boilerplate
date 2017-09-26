@@ -29,10 +29,6 @@ module.exports = {
             clenBuild: 'rimraf build -r'
         }),
     },
-    docs: {
-        description: 'generate documentation using typedoc (automaticly done on each release)',
-        script: 'typedoc --options _config_/typedoc.json --out docs/doc src/index.lib.ts',
-    },    
     lint: {
         description: 'lint the code with tslint',
         script: 'tslint -c _config_/tslint.json "src/**/*.ts"',
@@ -50,7 +46,7 @@ module.exports = {
             description: 'create a new tag depending on the last commits and update changelog accordingly, create a tag, generate documentation, commit and push',
             script: 'standard-version --no-verify',
         },
-        firstRelease: {
+        first: {
             description: 'first release usualy 0.0.0',
             script: 'standard-version --no-verify --first-release',
         },

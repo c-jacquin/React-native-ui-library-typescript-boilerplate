@@ -6,7 +6,6 @@ module.exports = async (version: string) => {
     } catch (err) {
         console.error(err)
     }
-    await fs.move(`${process.cwd()}/docs/doc`, `${versionDir}/doc`)
     await fs.move(`${process.cwd()}/docs/lcov-report`, `${versionDir}/lcov-report`)
     await fs.move(`${process.cwd()}/docs/test-report`, `${versionDir}/test-report`)
 }
