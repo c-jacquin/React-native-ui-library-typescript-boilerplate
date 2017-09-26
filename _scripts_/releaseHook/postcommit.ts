@@ -8,7 +8,7 @@
 
     try {
         let changelog = await fs.readFile(changelogPath, { encoding: 'utf-8' })
-        await exec('npm start test.coverage')
+        await exec('npm start test.cover')
         await exec('npm start build')
         await exec('npm start docs')
 
