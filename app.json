@@ -9,7 +9,7 @@
     "orientation": "portrait",
     "primaryColor": "#cccccc",
     "icon": "./assets/icons/app-icon.png",
-    "entryPoint": "build/demo.jsx",
+    "entryPoint": "build/example/index.js",
     "loading": {
       "icon": "./assets/icons/loading-icon.png",
       "hideExponentText": false

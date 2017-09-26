@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
+        "target": "es2015",
+        "module": "es2015",
         "allowJs": true,
         "jsx": "react-native",
         "sourceMap": true,
-        "outDir": "../dist",
-        "rootDir": "../src",
+        "outDir": "../build",
+        "rootDir": "../",
         "removeComments": false,
         "lib":["dom","es2017"],
         "strict": true,
@@ -23,9 +23,8 @@
         "experimentalDecorators": true
     },
     "include": [
-        "../src/components/**/*",
-        "../src/index.ts",
-        "../src/typings"
+        "./**/*",
+        "../src/**/*"
     ],
     "exclude": [
         "../src/**/__mocks__/*",

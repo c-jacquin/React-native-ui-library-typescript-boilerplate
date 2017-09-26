@@ -1,0 +1,7 @@
+import { DrawerNavigator } from 'react-navigation'
+
+// Import pages here
+
+export default DrawerNavigator({
+    // Insert pages here
+})

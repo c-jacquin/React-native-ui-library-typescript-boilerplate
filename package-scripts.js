@@ -80,35 +80,35 @@ module.exports = {
         },
         watch: {
             description: 'build and watch for changes',
-            script: 'NODE_ENV=development tsc --watch -p _config_/tsconfig-lib.json',
+            script: 'NODE_ENV=development tsc --watch',
         },
         production: {
             description: 'build for production',
-            script: 'NODE_ENV=production tsc -p _config_/tsconfig-lib.json',
+            script: 'NODE_ENV=production tsc',
         },
-        demo: {
-            default: {
-                description: 'build the demo app',
-                script: series(
-                    'nps build.demo.prepare',
-                    'NODE_ENV=production tsc'
-                )
-            },
-            prepare: {
-                description: 'clean the build dir',
-                script: series(
-                    'rimraf build -r',
-                    'mkdir build'
-                ),
-            },
-            watch: {
-                description: 'build the demo app and watch for sources',
-                script: series(
-                    'nps build.demo.prepare',
-                    'NODE_ENV=development tsc --watch'
-                )
-            }
+    },
+    example: {
+        default: {
+            description: 'build the example app',
+            script: series(
+                'nps example.prepare',
+                'NODE_ENV=production tsc -p example'
+            )
         },
+        prepare: {
+            description: 'clean the build dir',
+            script: series(
+                'rimraf build -r',
+                'mkdir build'
+            ),
+        },
+        watch: {
+            description: 'build the example app and watch for sources',
+            script: series(
+                'nps example.prepare',
+                'NODE_ENV=development tsc --watch -p example'
+            )
+        }
     },
     test: {
         default: {

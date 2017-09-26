@@ -1,0 +1,22 @@
+import React, { Component } from 'react'
+
+import Title from '_demo_/components/Title'
+import ComponentWrapper from '_demo_/components/ComponentWrapper'
+
+import { {{ pascal name }} } from './index'
+import { {{ pascal name }}Props } from './types'
+
+export class {{ pascal name }}Example extends Component<any, any>  {
+    static navigationOptions = {
+        drawerLabel: '{{ pascal name }}',
+    }
+
+    render() {
+        return (
+            <ComponentWrapper>
+                <Title type="h1">{{ pascal name }} Component</Title>
+                <{{ pascal name }} />
+            </ComponentWrapper>
+        )
+    }
+}

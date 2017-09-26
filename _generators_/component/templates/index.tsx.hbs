@@ -3,7 +3,7 @@ import { View } from 'glamorous-native'
 
 import { {{ properCase name }}Props, {{ properCase name }}State } from './types'
 
-class {{ properCase name }} extends PureComponent<{{ properCase name }}Props, {{ properCase name }}State> {
+export class {{ properCase name }} extends PureComponent<{{ properCase name }}Props, {{ properCase name }}State> {
     static displayName = '{{ pascal name }}'
 
     render() {
@@ -12,5 +12,3 @@ class {{ properCase name }} extends PureComponent<{{ properCase name }}Props, {{
         )
     }
 }
-
-export default {{ properCase name }}

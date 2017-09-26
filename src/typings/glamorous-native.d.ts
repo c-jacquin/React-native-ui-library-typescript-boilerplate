@@ -40,7 +40,7 @@ declare module 'glamorous-native' {
     }
 
     interface DynamicStyles<Props, Style, Theme> {
-        (props: Props, theme?: Theme, context?: any): Style
+        (props: Props, theme: Theme, context?: any): Style
     }
 
     interface ThemeProviderProps<Theme> {
@@ -105,73 +105,88 @@ declare module 'glamorous-native' {
             style: ScrollViewStyle,
             dynamicStyles?: DynamicStyles<Props, ScrollViewStyle, Theme>
         ) => React.StatelessComponent<
-            ScrollViewStyle & ExtraGlamorousProps & FlatListProperties<any>
+            ScrollViewStyle &
+                ExtraGlamorousProps &
+                FlatListProperties<any> &
+                Props
         >
         image: <Props, Theme>(
             style: ImageStyle,
             dynamicStyles?: DynamicStyles<Props, ImageStyle, Theme>
         ) => React.StatelessComponent<
-            ImageStyle & ExtraGlamorousProps & ImageProperties
+            ImageStyle & ExtraGlamorousProps & ImageProperties & Props
         >
         listView: <Props, Theme>(
             style: ScrollViewStyle,
             dynamicStyles?: DynamicStyles<Props, ScrollViewStyle, Theme>
         ) => React.StatelessComponent<
-            ScrollViewStyle & ExtraGlamorousProps & ListViewProperties
+            ScrollViewStyle & ExtraGlamorousProps & ListViewProperties & Props
         >
         scrollView: <Props, Theme>(
             style: ScrollViewStyle,
             dynamicStyles?: DynamicStyles<Props, ScrollViewStyle, Theme>
         ) => React.StatelessComponent<
-            ScrollViewStyle & ExtraGlamorousProps & ScrollViewProperties
+            ScrollViewStyle & ExtraGlamorousProps & ScrollViewProperties & Props
         >
         sectionList: <Props, Theme>(
             style: ScrollViewStyle,
             dynamicStyles?: DynamicStyles<Props, ScrollViewStyle, Theme>
         ) => React.StatelessComponent<
-            ScrollViewStyle & ExtraGlamorousProps & SectionListProperties<any>
+            ScrollViewStyle &
+                ExtraGlamorousProps &
+                SectionListProperties<any> &
+                Props
         >
         text: <Props, Theme>(
             style: TextStyle,
             dynamicStyles?: DynamicStyles<Props, TextStyle, Theme>
         ) => React.StatelessComponent<
-            TextStyle & ExtraGlamorousProps & TextProperties
+            TextStyle & ExtraGlamorousProps & TextProperties & Props
         >
         textInput: <Props, Theme>(
             style: ViewStyle,
             dynamicStyles?: DynamicStyles<Props, ViewStyle, Theme>
         ) => React.StatelessComponent<
-            ViewStyle & ExtraGlamorousProps & TextInputProperties
+            ViewStyle & ExtraGlamorousProps & TextInputProperties & Props
         >
         touchableHighlight: <Props, Theme>(
             style: ViewStyle,
             dynamicStyles?: DynamicStyles<Props, ViewStyle, Theme>
         ) => React.StatelessComponent<
-            ViewStyle & ExtraGlamorousProps & TouchableHighlightProperties
+            ViewStyle &
+                ExtraGlamorousProps &
+                TouchableHighlightProperties &
+                Props
         >
         touchableNativeFeedback: <Props, Theme>(
             style: ViewStyle,
             dynamicStyles?: DynamicStyles<Props, ViewStyle, Theme>
         ) => React.StatelessComponent<
-            ViewStyle & ExtraGlamorousProps & TouchableNativeFeedbackProperties
+            ViewStyle &
+                ExtraGlamorousProps &
+                TouchableNativeFeedbackProperties &
+                Props
         >
         touchableOpacity: <Props, Theme>(
             style: ViewStyle,
             dynamicStyles?: DynamicStyles<Props, ViewStyle, Theme>
         ) => React.StatelessComponent<
-            ViewStyle & ExtraGlamorousProps & TouchableOpacityProperties
+            ViewStyle & ExtraGlamorousProps & TouchableOpacityProperties & Props
         >
         touchableWithoutFeedback: <Props, Theme>(
             style: ViewStyle,
             dynamicStyles?: DynamicStyles<Props, ViewStyle, Theme>
         ) => React.StatelessComponent<
-            ViewStyle & ExtraGlamorousProps & TouchableWithoutFeedbackProperties
+            ViewStyle &
+                ExtraGlamorousProps &
+                TouchableWithoutFeedbackProperties &
+                Props
         >
         view: <Props, Theme>(
             style: ViewStyle,
             dynamicStyles?: DynamicStyles<Props, ViewStyle, Theme>
         ) => React.StatelessComponent<
-            ViewStyle & ExtraGlamorousProps & ViewProperties
+            ViewStyle & ExtraGlamorousProps & ViewProperties & Props
         >
     }
 

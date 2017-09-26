@@ -5,4 +5,8 @@ export const mainTheme: Theme = {
         primary: 'blue',
         secondary: 'green',
     },
+    size: {
+        h1: 25,
+        h2: 15,
+    },
 }

@@ -61,6 +61,11 @@ module.exports = {
             templateFile: './component/templates/types.ts.hbs',
             abortOnFail: true,
         }, {
+            type: 'add',
+            path: '../src/components/{{properCase name}}/example.tsx',
+            templateFile: './component/templates/example.tsx.hbs',
+            abortOnFail: true,
+        }, {
             type: 'modify',
             path: '../src/index.ts',
             templateFile: './component/templates/export*From.hbs',
@@ -78,6 +83,17 @@ module.exports = {
             templateFile: './component/templates/typingImport.hbs',
             pattern: /\/\/ Import types here/,
             abortOnFail: true,
+        }, {
+            type: 'modify',
+            path: '../example/navigator.ts',
+            pattern: /\/\/ Insert pages here\n/g,
+            templateFile: './component/templates/mainNavigator.hbs',
+        },
+        {
+            type: 'modify',
+            path: '../example/navigator.ts',
+            pattern: /\/\/ Import pages here\n/g,
+            templateFile: './component/templates/importExample.hbs',
         }]
 
         return actions
