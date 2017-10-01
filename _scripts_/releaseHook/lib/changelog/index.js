@@ -1,4 +1,4 @@
-module.exports = async (version: string, changelog: string, changelogPath: string) => {
+module.exports = async (version, changelog, changelogPath) => {
     const fs = require('fs-extra')
 
     const newChangelog = changelog.replace(

@@ -1,11 +1,13 @@
-(async () => {
-    const { exec } = require('child-process-promise')
-    const fs = require('fs-extra')
-    const { generateDoc } = require('@chazzz/simple-doc')    
-    const { updateExpoVersion, updateChangeLog, versionDoc } = require('./lib')
-    const pkg = require(`${process.cwd()}/package.json`)
-    const changelogPath = `${process.cwd()}/CHANGELOG.md`
+const { exec } = require('child-process-promise')
+const fs = require('fs-extra')
+const path = require('path')
+const { generateDoc } = require('@chazzz/simple-doc')    
+const { updateExpoVersion, updateChangeLog, versionDoc } = require('./lib')
+const pkg = require(path.resolve(process.cwd(), 'package.json'))
 
+const changelogPath = path.resolve(process.cwd(), 'CHANGELOG.md')
+
+(async () => {
     try {
         let changelog = await fs.readFile(changelogPath, { encoding: 'utf-8' })
         await exec('npm start test.cover')
@@ -17,8 +19,8 @@
         changelog = await updateChangeLog(pkg.version, changelog, changelogPath)
 
         await generateDoc({
-            pkg,
             markdown: changelog,
+            pkg,
         })
         await exec('git add -A')
         await exec('git commit --amend --no-edit')

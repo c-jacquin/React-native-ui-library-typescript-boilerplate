@@ -1,6 +1,7 @@
-module.exports = async (version: string) => {
-    const fs = require('fs-extra')
-    const versionDir = `${process.cwd()}/docs/${version}`
+const fs = require('fs-extra')
+const versionDir = `${process.cwd()}/docs/${version}`
+
+module.exports = async (version) => {
     try {
         await fs.mkdir(versionDir)
     } catch (err) {

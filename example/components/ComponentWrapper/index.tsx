@@ -3,6 +3,8 @@ import { Theme } from 'themes/types'
 
 interface ComponentWrapperProps {}
 
-export default glamorous.view<ComponentWrapperProps, Theme>({
-    flex: 1,
-})
+export default glamorous.view(
+    {
+        flex: 1,
+    }, 
+)

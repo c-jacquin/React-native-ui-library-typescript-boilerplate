@@ -1,11 +1,6 @@
 const { argv } = require('yargs')
 
 const jestConfig = {
-    globals: {
-        'ts-jest': {
-            tsConfigFile: '_config_/tsconfig-test.json'
-        }
-    },
     collectCoverageFrom: [
         'src/**/*.{ts,tsx}',
         '!src/**/*.test.{ts, tsx}',
@@ -25,7 +20,7 @@ const jestConfig = {
     ],
     preset: 'jest-expo-ts',
     setupFiles: [
-        './_scripts_/testHook/test-setup.ts'
+        './_scripts_/testHook/test-setup.js'
     ],
     testPathIgnorePatterns: [
         '<rootDir>/build/',

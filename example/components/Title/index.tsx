@@ -5,10 +5,13 @@ interface TitleProps {
     type: 'h1' |'h2'
 }
 
-export default glamorous.text<TitleProps, Theme>({
-    alignSelf: 'center',
-    borderBottomWidth: 3,
-}, (props, theme) => ({
-    borderBottomColor: theme.colors.secondary,
-    fontSize: theme.size[props.type]
-}))
+export default glamorous.text<TitleProps, Theme>(
+    {
+        alignSelf: 'center',
+        borderBottomWidth: 3,
+    },
+    (props, theme) => ({
+        borderBottomColor: theme ? theme.colors.secondary : 'black',
+        fontSize: theme ? theme.size[props.type] : 10,
+    }),
+)

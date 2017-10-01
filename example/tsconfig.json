@@ -17,14 +17,16 @@
         "moduleResolution": "node",
         "baseUrl": "../src",
         "typeRoots": [
-            "../src/typings"
+            "../src/typings",
+            "../node_modules/@chazzz/base-type"
         ],
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true
     },
     "include": [
         "./**/*",
-        "../src/**/*"
+        "../src/**/*",
+        "../node_modules/@chazzz/base-type"        
     ],
     "exclude": [
         "../src/**/__mocks__/*",

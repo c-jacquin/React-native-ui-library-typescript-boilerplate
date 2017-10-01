@@ -1,14 +1,14 @@
 import Expo from 'expo'
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { StatusBar, ScrollView, Text } from 'react-native'
-import { View } from 'glamorous-native'
-import { ThemeProvider } from 'glamorous-native'
+import { View, ThemeProvider } from 'glamorous-native'
 
 import { mainTheme } from '../src/themes/main'
 import Navigator from './navigator'
 
-class Demo extends PureComponent<any, any> {
+class Demo extends Component<void, void> {
+    
     render() {
         return (
             <ThemeProvider theme={mainTheme}>            

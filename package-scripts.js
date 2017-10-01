@@ -31,11 +31,11 @@ module.exports = {
     },
     lint: {
         description: 'lint the code with tslint',
-        script: 'tslint -c _config_/tslint.json "src/**/*.ts"',
+        script: 'tslint "src/**/*.ts"',
     },
     prettier: {
         description: 'format the code using prettier',
-        script: 'prettier --write --config _config_/prettier.config.js \"src/**/*(*.ts|*.tsx)\"',
+        script: 'prettier --write \"src/**/*(*.ts|*.tsx)\"',
     },
     validate: {
         description: 'lint the code, run the test and build',
@@ -52,11 +52,11 @@ module.exports = {
         },
         postcommit: {
             description: 'generate documentation and amend standard version commit',
-            script: 'ts-node --project _scripts_/ _scripts_/releaseHook/postcommit'
+            script: 'node _scripts_/releaseHook/postcommit'
         },
         posttag: {
             description: 'push the new release on the remote',
-            script: 'ts-node --project _scripts_/ _scripts_/releaseHook/posttag'
+            script: 'node _scripts_/releaseHook/posttag'
         },
     },
     build: {
@@ -119,7 +119,7 @@ module.exports = {
             description: 'run test with istanbul test coverage',
             script: series(
                 'NODE_ENV=test jest --coverage',
-                'ts-node --project _scripts_/ _scripts_/testHook/remap-coverage',
+                'node _scripts_/testHook/remap-coverage',
                 'rimraf .temp -r'
             ),
         },
