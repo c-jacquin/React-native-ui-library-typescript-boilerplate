@@ -10,10 +10,9 @@
   },
   "scripts": {
     "test": "nps test",
-    "postinstall": "rimraf node_modules/intl/.babelrc",
+    "postinstall": "rimraf node_modules/intl/.babelrc && rimraf node_modules/glamorous-native/typings -rf",
     "precommit": "lint-staged",
     "prepush": "npm test",
-    "install": "rimraf node_modules/glamorous-native/typings -rf",
     "start": "nps"
   },
   "dependencies": {
@@ -24,7 +23,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-20.0.0.tar.gz"
   },
   "devDependencies": {
-    "@chazzz/base-type": "^1.0.5",
+    "@chazzz/base-type": "^1.0.6",
     "@chazzz/simple-doc": "0.0.3",
     "@chazzz/tslint-react-config": "^1.0.1",
     "@types/fbemitter": "^2.0.32",
